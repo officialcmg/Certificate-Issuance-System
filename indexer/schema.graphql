@@ -3,6 +3,7 @@ type OrganizationNFTCertificate_Approval {
   owner: String!
   approved: String!
   tokenId: BigInt!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_ApprovalForAll {
@@ -10,12 +11,14 @@ type OrganizationNFTCertificate_ApprovalForAll {
   owner: String!
   operator: String!
   approved: Boolean!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_BatchMetadataUpdate {
   id: ID!
   _fromTokenId: BigInt!
   _toTokenId: BigInt!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_CertificateMinted {
@@ -24,11 +27,13 @@ type OrganizationNFTCertificate_CertificateMinted {
   recipient: String!
   tokenId: BigInt!
   tokenURI: String!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_MetadataUpdate {
   id: ID!
   _tokenId: BigInt!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_OrganizationRegistered {
@@ -36,6 +41,7 @@ type OrganizationNFTCertificate_OrganizationRegistered {
   organization: String!
   logoUrl: String!
   brandColor: String!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_RoleAdminChanged {
@@ -43,6 +49,7 @@ type OrganizationNFTCertificate_RoleAdminChanged {
   role: String!
   previousAdminRole: String!
   newAdminRole: String!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_RoleGranted {
@@ -50,6 +57,7 @@ type OrganizationNFTCertificate_RoleGranted {
   role: String!
   account: String!
   sender: String!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_RoleRevoked {
@@ -57,6 +65,7 @@ type OrganizationNFTCertificate_RoleRevoked {
   role: String!
   account: String!
   sender: String!
+  timestamp: BigInt!
 }
 
 type OrganizationNFTCertificate_Transfer {
@@ -64,5 +73,5 @@ type OrganizationNFTCertificate_Transfer {
   from: String!
   to: String!
   tokenId: BigInt!
+  timestamp: BigInt!
 }
-

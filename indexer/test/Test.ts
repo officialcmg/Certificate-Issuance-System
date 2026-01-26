@@ -1,5 +1,5 @@
 import assert from "assert";
-import { 
+import {
   TestHelpers,
   OrganizationNFTCertificate_Approval
 } from "generated";
@@ -10,7 +10,7 @@ describe("OrganizationNFTCertificate contract Approval event tests", () => {
   const mockDb = MockDb.createMockDb();
 
   // Creating mock for OrganizationNFTCertificate contract Approval event
-  const event = OrganizationNFTCertificate.Approval.createMockEvent({/* It mocks event fields with default values. You can overwrite them if you need */});
+  const event = OrganizationNFTCertificate.Approval.createMockEvent({/* It mocks event fields with default values. You can overwrite them if you need */ });
 
   it("OrganizationNFTCertificate_Approval is created correctly", async () => {
     // Processing the event
@@ -30,6 +30,7 @@ describe("OrganizationNFTCertificate contract Approval event tests", () => {
       owner: event.params.owner,
       approved: event.params.approved,
       tokenId: event.params.tokenId,
+      timestamp: BigInt(event.block.timestamp),
     };
     // Asserting that the entity in the mock database is the same as the expected entity
     assert.deepEqual(actualOrganizationNFTCertificateApproval, expectedOrganizationNFTCertificateApproval, "Actual OrganizationNFTCertificateApproval should be the same as the expectedOrganizationNFTCertificateApproval");

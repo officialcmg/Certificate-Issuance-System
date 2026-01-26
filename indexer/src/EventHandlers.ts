@@ -23,6 +23,7 @@ OrganizationNFTCertificate.CertificateMinted.handler(async ({ event, context }) 
     recipient: event.params.recipient,
     tokenId: event.params.tokenId,
     tokenURI: event.params.tokenURI,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_CertificateMinted.set(entity);
@@ -34,6 +35,7 @@ OrganizationNFTCertificate.OrganizationRegistered.handler(async ({ event, contex
     organization: event.params.organization,
     logoUrl: event.params.logoUrl,
     brandColor: event.params.brandColor,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_OrganizationRegistered.set(entity);
@@ -45,6 +47,7 @@ OrganizationNFTCertificate.Approval.handler(async ({ event, context }) => {
     owner: event.params.owner,
     approved: event.params.approved,
     tokenId: event.params.tokenId,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_Approval.set(entity);
@@ -56,6 +59,7 @@ OrganizationNFTCertificate.ApprovalForAll.handler(async ({ event, context }) => 
     owner: event.params.owner,
     operator: event.params.operator,
     approved: event.params.approved,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_ApprovalForAll.set(entity);
@@ -66,6 +70,7 @@ OrganizationNFTCertificate.BatchMetadataUpdate.handler(async ({ event, context }
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     _fromTokenId: event.params._fromTokenId,
     _toTokenId: event.params._toTokenId,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_BatchMetadataUpdate.set(entity);
@@ -76,6 +81,7 @@ OrganizationNFTCertificate.MetadataUpdate.handler(async ({ event, context }) => 
   const entity: OrganizationNFTCertificate_MetadataUpdate = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     _tokenId: event.params._tokenId,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_MetadataUpdate.set(entity);
@@ -88,6 +94,7 @@ OrganizationNFTCertificate.RoleAdminChanged.handler(async ({ event, context }) =
     role: event.params.role,
     previousAdminRole: event.params.previousAdminRole,
     newAdminRole: event.params.newAdminRole,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_RoleAdminChanged.set(entity);
@@ -99,6 +106,7 @@ OrganizationNFTCertificate.RoleGranted.handler(async ({ event, context }) => {
     role: event.params.role,
     account: event.params.account,
     sender: event.params.sender,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_RoleGranted.set(entity);
@@ -110,6 +118,7 @@ OrganizationNFTCertificate.RoleRevoked.handler(async ({ event, context }) => {
     role: event.params.role,
     account: event.params.account,
     sender: event.params.sender,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_RoleRevoked.set(entity);
@@ -121,6 +130,7 @@ OrganizationNFTCertificate.Transfer.handler(async ({ event, context }) => {
     from: event.params.from,
     to: event.params.to,
     tokenId: event.params.tokenId,
+    timestamp: BigInt(event.block.timestamp),
   };
 
   context.OrganizationNFTCertificate_Transfer.set(entity);

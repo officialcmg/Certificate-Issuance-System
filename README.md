@@ -10,12 +10,8 @@ https://github.com/I-Macharia/Certificate-Issuance-System/AvaCertify_Pitch.mp4
 ## 🚀 Deployed Contracts (Avalanche Fuji Testnet)
 
 ### Smart Contracts
-- **CertificateIssuanceSystem**: [`0xb90c5B3fE62f463AF697B6bC53ac579b0B2f0F2A`](https://testnet.snowtrace.io/address/0xb90c5B3fE62f463AF697B6bC53ac579b0B2f0F2A)
-  - Main certificate management contract with role-based access control
-  - Supports certificate issuance, revocation, and transfers
-  - Features admin and issuer role management
 
-- **OrganizationNFTCertificate**: [`0xdE5b750ebBc0A92a53614f18081E72609F09BC69`](https://testnet.snowtrace.io/address/0xdE5b750ebBc0A92a53614f18081E72609F09BC69)
+- **OrganizationNFTCertificate**: [`0x0B101803e331184b97b1333298437a1183074fb4`](https://snowtrace.io/tx/0x76b1869e6e9e055e6f7ee5d06cd15aa2aaf44170c5deb45c7cf994338bd3b94f?chainid=43114)
   - NFT-based certificate with organization branding support
   - ERC721 compliance with custom metadata
   - Organization registration and branding features

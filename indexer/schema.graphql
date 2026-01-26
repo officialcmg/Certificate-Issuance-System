@@ -1,0 +1,68 @@
+type OrganizationNFTCertificate_Approval {
+  id: ID!
+  owner: String!
+  approved: String!
+  tokenId: BigInt!
+}
+
+type OrganizationNFTCertificate_ApprovalForAll {
+  id: ID!
+  owner: String!
+  operator: String!
+  approved: Boolean!
+}
+
+type OrganizationNFTCertificate_BatchMetadataUpdate {
+  id: ID!
+  _fromTokenId: BigInt!
+  _toTokenId: BigInt!
+}
+
+type OrganizationNFTCertificate_CertificateMinted {
+  id: ID!
+  organization: String!
+  recipient: String!
+  tokenId: BigInt!
+  tokenURI: String!
+}
+
+type OrganizationNFTCertificate_MetadataUpdate {
+  id: ID!
+  _tokenId: BigInt!
+}
+
+type OrganizationNFTCertificate_OrganizationRegistered {
+  id: ID!
+  organization: String!
+  logoUrl: String!
+  brandColor: String!
+}
+
+type OrganizationNFTCertificate_RoleAdminChanged {
+  id: ID!
+  role: String!
+  previousAdminRole: String!
+  newAdminRole: String!
+}
+
+type OrganizationNFTCertificate_RoleGranted {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type OrganizationNFTCertificate_RoleRevoked {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type OrganizationNFTCertificate_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  tokenId: BigInt!
+}
+

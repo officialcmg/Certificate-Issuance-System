@@ -33,7 +33,7 @@ https://github.com/I-Macharia/Certificate-Issuance-System/AvaCertify_Pitch.mp4
 
 ### Indexer (Envio HyperIndex)
 - **Framework**: [Envio](https://envio.dev) HyperIndex
-- **GraphQL Endpoint**: `https://indexer.dev.hyperindex.xyz/7ead2b4/v1/graphql`
+- **GraphQL Endpoint**: `https://indexer.dev.hyperindex.xyz/5df3e08/v1/graphql`
 - **Indexed Events**: CertificateMinted, OrganizationRegistered, Transfer, RoleGranted/Revoked
 - **Location**: `indexer/`
 

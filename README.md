@@ -31,6 +31,12 @@ https://github.com/I-Macharia/Certificate-Issuance-System/AvaCertify_Pitch.mp4
 - **Dependencies**: OpenZeppelin Contracts v5
 - **Location**: `src/`
 
+### Indexer (Envio HyperIndex)
+- **Framework**: [Envio](https://envio.dev) HyperIndex
+- **GraphQL Endpoint**: `https://indexer.dev.hyperindex.xyz/7ead2b4/v1/graphql`
+- **Indexed Events**: CertificateMinted, OrganizationRegistered, Transfer, RoleGranted/Revoked
+- **Location**: `indexer/`
+
 ### Key Features
 - 🔐 **Role-based Access Control**: Admin and Issuer roles with granular permissions
 - 📜 **Certificate Management**: Issue, revoke, transfer, and verify certificates

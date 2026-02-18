@@ -21,8 +21,10 @@ const upload = multer({
 // Security middleware
 app.use(helmet());
 app.use(express.json({ limit: '1mb' }));
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*', methods: ['POST'] }));
-app.use(rateLimit({ windowMs: 60_000, max: 10 }));
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*', methods: ['POST', 'OPTIONS'] }));
+app.options('*', cors());
+
+const limiter = rateLimit({ windowMs: 60_000, max: 10 });
 
 // Auth middleware — verify Privy JWT
 async function verifyPrivyToken(req, res, next) {
@@ -50,7 +52,7 @@ async function verifyPrivyToken(req, res, next) {
 }
 
 // POST /api/pin-file — upload image to IPFS
-app.post('/api/pin-file', verifyPrivyToken, upload.single('file'), async (req, res) => {
+app.post('/api/pin-file', limiter, verifyPrivyToken, upload.single('file'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No valid file' });
 
   const form = new FormData();
@@ -84,7 +86,7 @@ app.post('/api/pin-file', verifyPrivyToken, upload.single('file'), async (req, r
 });
 
 // POST /api/pin-json — upload metadata to IPFS
-app.post('/api/pin-json', verifyPrivyToken, async (req, res) => {
+app.post('/api/pin-json', limiter, verifyPrivyToken, async (req, res) => {
   const { metadata } = req.body;
   if (!metadata || typeof metadata !== 'object')
     return res.status(400).json({ error: 'Invalid metadata' });

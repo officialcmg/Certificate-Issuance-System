@@ -19,8 +19,6 @@ const upload = multer({
 });
 
 // Security middleware
-app.use(helmet());
-app.use(express.json({ limit: '1mb' }));
 app.use(cors({
   origin: function (origin, callback) {
     const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
@@ -40,6 +38,9 @@ app.use(cors({
   methods: ['POST', 'OPTIONS']
 }));
 app.options('*', cors());
+
+app.use(helmet());
+app.use(express.json({ limit: '1mb' }));
 
 const limiter = rateLimit({ windowMs: 60_000, max: 10 });
 

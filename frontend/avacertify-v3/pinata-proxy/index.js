@@ -21,7 +21,24 @@ const upload = multer({
 // Security middleware
 app.use(helmet());
 app.use(express.json({ limit: '1mb' }));
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*', methods: ['POST', 'OPTIONS'] }));
+app.use(cors({
+  origin: function (origin, callback) {
+    const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
+    if (!origin || allowedOrigin === '*') return callback(null, true);
+
+    // Allow Lovable preview URLs
+    if (origin.endsWith('.lovable.app') || origin.includes('localhost')) {
+      return callback(null, true);
+    }
+
+    if (origin === allowedOrigin) {
+      return callback(null, true);
+    }
+
+    callback(new Error('Not allowed by CORS'));
+  },
+  methods: ['POST', 'OPTIONS']
+}));
 app.options('*', cors());
 
 const limiter = rateLimit({ windowMs: 60_000, max: 10 });

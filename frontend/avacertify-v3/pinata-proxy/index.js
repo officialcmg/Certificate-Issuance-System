@@ -13,7 +13,7 @@ const app = express();
 const upload = multer({
   limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
   fileFilter: (_req, file, cb) => {
-    const allowed = ['image/png', 'image/jpeg', 'image/webp', 'image/gif'];
+    const allowed = ['image/png', 'image/jpeg', 'image/webp', 'image/gif', 'application/pdf'];
     cb(null, allowed.includes(file.mimetype));
   },
 });

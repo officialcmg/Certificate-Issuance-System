@@ -18,7 +18,7 @@ const upload = multer({
   },
 });
 
-// Security middleware
+// Security middleware — CORS must be first
 app.use(cors({
   origin: function (origin, callback) {
     const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
@@ -35,9 +35,11 @@ app.use(cors({
 
     callback(new Error('Not allowed by CORS'));
   },
-  methods: ['POST', 'OPTIONS']
+  methods: ['POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 }));
-app.options('*', cors());
 
 app.use(helmet());
 app.use(express.json({ limit: '1mb' }));
